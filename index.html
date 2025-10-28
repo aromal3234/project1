@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Aesthetic Page for My Girl</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="story-button.css">
+  <link rel="stylesheet" href="story.css">
+  <script src="https://unpkg.com/heic2any/dist/heic2any.js"></script>
+  <script src="story.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-row">
+      <div class="header-left">
+        <h1 class="title">For You</h1>
+        <p class="subtitle">Little moments, big memories ✨</p>
+        <div class="header-decor" aria-hidden="true"></div>
+      </div>
+      <!-- header-right removed to keep header clean; story button moved to footer -->
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- Hero / Highlight video -->
+    <section class="hero">
+      <div class="video-wrap">
+        <!-- Replace the `src` with your highlight video in `assets/highlight.mp4` -->
+        <video id="highlightVideo" class="highlight-video" autoplay playsinline muted preload="metadata" poster="assets/video-poster.jpg">
+          <!-- MOV files are QuickTime; set a matching type. Keep muted so autoplay works in modern browsers. -->
+          <source src="vd2/uthuv.MOV" type="video/quicktime">
+          Your browser does not support the video tag.
+        </video>
+        <!-- Play/unmute overlay — shown when autoplay is blocked or to unmute -->
+        <div id="videoOverlay" class="video-overlay" aria-hidden="true">
+          <button id="videoPlayBtn" class="video-play-btn" type="button">▶️ Play</button>
+          <button id="videoUnmuteBtn" class="video-unmute-btn" type="button" aria-label="Unmute">🔊</button>
+        </div>
+        <div class="video-caption">Our Highlight — play to relive the moment</div>
+      </div>
+    </section>
+
+    <!-- Photo gallery -->
+    <section class="gallery" aria-label="Photo gallery">
+      <!-- Replace the images in `assets/` with your photos and update the `src` and `data-quote` as needed -->
+
+      <figure class="card" data-quote="You are my favorite notification.">
+        <img src="assets/pt1.JPG" alt="Photo 1" loading="lazy">
+        <figcaption class="quote">You are my favorite notification.</figcaption>
+      </figure>
+
+      <figure class="card" data-quote="Every day with you is my best day.">
+        <img src="assets/pt2.heic" alt="Photo 2" loading="lazy">
+        <figcaption class="quote">Every day with you is my best day.</figcaption>
+      </figure>
+
+      <figure class="card" data-quote="Small moments, big smiles.">
+        <img src="assets/pt3.heic" alt="Photo 3" loading="lazy">
+        <figcaption class="quote">Small moments, big smiles.</figcaption>
+      </figure>
+
+       
+      <figure class="card" data-quote="With you, ordinary becomes extraordinary.">
+        <img src="assets/pt5.heic" alt="Photo 5" loading="lazy">
+        <figcaption class="quote">With you, ordinary becomes extraordinary.</figcaption>
+      </figure>
+
+      <figure class="card" data-quote="You make my heart feel at home.">
+        <img src="assets/pt6.JPG" alt="Photo 6" loading="lazy">
+        <figcaption class="quote">You make my heart feel at home.</figcaption>
+      </figure>
+
+      <figure class="card" data-quote="Collecting memories, one laugh at a time.">
+        <img src="assets/pt7.JPG" alt="Photo 7" loading="lazy">
+        <figcaption class="quote">Collecting memories, one laugh at a time.</figcaption>
+      </figure> 
+
+      <figure class="card" data-quote="You are my today and all of my tomorrows.">
+        <img src="assets/pt8.jpg" alt="Photo 8" loading="lazy">
+        <figcaption class="quote">You are my today and all of my tomorrows.</figcaption>
+      </figure>
+
+      <figure class="card" data-quote="In your eyes, I found my favorite place.">
+        <img src="assets/pt9.JPG" alt="Photo 9" loading="lazy">
+        <figcaption class="quote">In your eyes, I found my favorite place.</figcaption>
+      </figure>
+
+      <figure class="card" data-quote="Love grows where laughter lives.">
+        <img src="assets/pt10.HEIC" alt="Photo 10" loading="lazy">
+        <figcaption class="quote">Love grows where laughter lives.</figcaption>
+      </figure>
+
+     
+
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <button id="storyButtonBottom" class="story-trigger">✨ Our Story</button>
+    </div>
+  </footer>
+
+  <!-- Lightbox modal -->
+  <div id="lightbox" class="lightbox" aria-hidden="true">
+    <button id="lbClose" class="lb-close" aria-label="Close">×</button>
+    <div class="lb-inner">
+      <img id="lbImage" src="" alt="" />
+      <div id="lbCaption" class="lb-caption"></div>
+    </div>
+  </div>
+
+  <!-- heic2any: convert HEIC/HEIF images client-side so they can display in browsers that don't support HEIC natively -->
+  <script src="https://cdn.jsdelivr.net/npm/heic2any/dist/heic2any.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
+
